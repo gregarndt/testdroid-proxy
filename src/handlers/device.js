@@ -228,7 +228,8 @@ export default class {
     let buildUrl = getSignedUrl(
       filter.build,
       this.taskclusterCredentials.clientId,
-      this.taskclusterCredentials.accessToken
+      this.taskclusterCredentials.accessToken,
+      this.taskclusterCredentials.certificate
     );
 
     debug(`Built signed url for build: ${buildUrl}`);

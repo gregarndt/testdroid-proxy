@@ -57,6 +57,14 @@ parser.addArgument(
 );
 
 parser.addArgument(
+  ['--taskcluster-certificate'],
+  {
+    help: 'Certificate for taskcluster.',
+    required: false
+  }
+);
+
+parser.addArgument(
   ['--device-timeout'],
   {
     help: 'Timeout in seconds for device session',
@@ -162,7 +170,8 @@ server.start(() => {
   server.app.taskcluster = {
     credentials: {
       clientId: args.taskcluster_client_id,
-      accessToken: args.taskcluster_access_token
+      accessToken: args.taskcluster_access_token,
+      certificate: args.taskcluster_certificate
     }
   };
 
